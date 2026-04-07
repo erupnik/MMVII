@@ -68,17 +68,18 @@ nav:
     - Use Cases:
       - Image Development: tutorials/use-cases/image-development.md
       - Coded Targets: tutorials/use-cases/coded-targets.md
-  - Architecture:
-    - Overview: architecture/index.md
-    - Camera Modelization: architecture/camera-modelization.md
-    - Programming Guide:
-      - Overview & Adding Commands: architecture/programming-guide.md
-      - Serialization: architecture/serialization.md
-      - Non-Linear Optimisation: architecture/nonlinear-optim.md
-      - Symbolic Derivation: architecture/symbolic-derivation.md
-      - Image Classes: architecture/image-classes.md
-      - Mapping Framework: architecture/mapping.md
-      - Interpolators: architecture/interpolators.md
-      - Graph Library: architecture/graph.md
-      - Python API: architecture/python-api.md
+  - Theory:
+    - Overview: theory/index.md
+    - Camera Modelization: theory/camera-modelization.md
+  - Developer Guide:
+    - Overview: developer/index.md
+    - Adding Commands: developer/programming-guide.md
+    - Serialization: developer/serialization.md
+    - Non-Linear Optimisation: developer/nonlinear-optim.md
+    - Symbolic Derivation: developer/symbolic-derivation.md
+    - Image Classes: developer/image-classes.md
+    - Mapping Framework: developer/mapping.md
+    - Interpolators: developer/interpolators.md
+    - Graph Library: developer/graph.md
+    - Python API: developer/python-api.md
   - API Reference: api/index.md

@@ -33,4 +33,6 @@ MMVII/
 
 | Subsystem | Description |
 |-----------|-------------|
-| [Programming Guide](programming-guide.md) | Coding conventions, internal APIs, how to add commands |
+| [Theory](../theory/index.md) | Mathematical models: camera, distortion, calibration |
+| [Developer Guide](../developer/index.md) | Internal APIs, adding commands, serialization, optimisation |
+| [API Reference](../api/index.md) | Auto-generated C++ API from source comments |

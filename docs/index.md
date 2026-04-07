@@ -25,8 +25,11 @@ MMVII provides a command-line toolchain for:
 - :material-console: **[Command Reference](user-guide/commands.md)**  
   Full list of MMVII commands and their parameters
 
-- :material-file-tree: **[Architecture](architecture/index.md)**  
-  Codebase organization and design principles
+- :material-math-integral: **[Theory](theory/index.md)**  
+  Mathematical models and photogrammetric foundations
+
+- :material-code-braces: **[Developer Guide](developer/index.md)**  
+  Internal APIs, adding commands, contributing to MMVII
 
 </div>
 
