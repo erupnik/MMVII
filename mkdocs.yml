@@ -64,7 +64,10 @@ nav:
     - Overview: tutorials/index.md
     - Orientation & Relative Poses: tutorials/orientation.md
     - Bundle Adjustment: tutorials/bundle-adjustment.md
-    - Topometry: tutorials/topometry.md
+    - Topometry & Clinometers: tutorials/topometry.md
+    - Use Cases:
+      - Image Development: tutorials/use-cases/image-development.md
+      - Coded Targets: tutorials/use-cases/coded-targets.md
   - Architecture:
     - Overview: architecture/index.md
     - Camera Modelization: architecture/camera-modelization.md
