@@ -1,0 +1,59 @@
+site_name: MMVII Documentation
+site_description: Documentation for MicMac V2 (MMVII) — open-source photogrammetry
+site_url: https://erupnik.github.io/MMVII/
+repo_name: micmac-V2/MMVII
+repo_url: https://github.com/micmac-V2/MMVII
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - User Guide:
+    - Installation: user-guide/installation.md
+    - Command Reference: user-guide/commands.md
+  - Tutorials:
+    - Overview: tutorials/index.md
+    - Orientation & Relative Poses: tutorials/orientation.md
+    - Bundle Adjustment: tutorials/bundle-adjustment.md
+    - Topometry: tutorials/topometry.md
+  - Architecture:
+    - Overview: architecture/index.md
+    - Programming Guide: architecture/programming-guide.md
+  - API Reference: api/index.md
