@@ -47,6 +47,13 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css: []
 
 nav:
   - Home: index.md
@@ -60,5 +67,6 @@ nav:
     - Topometry: tutorials/topometry.md
   - Architecture:
     - Overview: architecture/index.md
+    - Camera Modelization: architecture/camera-modelization.md
     - Programming Guide: architecture/programming-guide.md
   - API Reference: api/index.md
