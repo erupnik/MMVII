@@ -71,5 +71,14 @@ nav:
   - Architecture:
     - Overview: architecture/index.md
     - Camera Modelization: architecture/camera-modelization.md
-    - Programming Guide: architecture/programming-guide.md
+    - Programming Guide:
+      - Overview & Adding Commands: architecture/programming-guide.md
+      - Serialization: architecture/serialization.md
+      - Non-Linear Optimisation: architecture/nonlinear-optim.md
+      - Symbolic Derivation: architecture/symbolic-derivation.md
+      - Image Classes: architecture/image-classes.md
+      - Mapping Framework: architecture/mapping.md
+      - Interpolators: architecture/interpolators.md
+      - Graph Library: architecture/graph.md
+      - Python API: architecture/python-api.md
   - API Reference: api/index.md
