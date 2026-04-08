@@ -16,6 +16,8 @@ The simplest possible camera is the **camera obscura**: a box with a pinhole. Li
 scene point $P^c = (x^c, y^c, z^c)$ (in the camera's local frame) travels in a straight line
 through the hole and hits the image plane at pixel $q = (i, j)$.
 
+![Camera obscura: schema and a real object](images/CameraObscura.jpg)
+
 Setting up coordinates with origin at the hole, axes $\vec{i}, \vec{j}$ in the image plane,
 and $\vec{k}$ orthogonal to it, and calling $P^p$ the **principal point** and $F$ the **focal length**:
 
@@ -23,14 +25,20 @@ $$
 i = P^p_x + F \frac{x^c}{z^c} \;\;;\;\; j = P^p_y + F \frac{y^c}{z^c}
 $$
 
+![Notation for the camera coordinate relation](images/Camera3D.jpg)
+
 !!! note "Sign convention"
     MMVII places the image plane *in front of* the hole (the mathematically equivalent but
     non-physical convention). This flips a sign compared to the physical camera obscura but
     is universally adopted in photogrammetry and computer vision.
 
+![Camera model: physically-based (left) vs. convention used in MMVII (right)](images/InvCamera.jpg)
+
 **MMVII convention for image axes:** $i$ runs left-to-right, $j$ top-to-bottom (native image
 format coordinates). This makes the camera frame *direct* ($\vec{k} = \vec{i} \wedge \vec{j}$),
 with $\vec{k}$ pointing in the **viewing direction** of the camera.
+
+![Camera frame and ground frame relationship](images/RepairCam.jpg)
 
 ### Compact notation
 
@@ -60,6 +68,8 @@ software) adopts one key hypothesis that is maintained throughout:
 
 > **All light rays producing a given image point $q$ pass through a single virtual point $C$.**
 
+![All outgoing light bundles converge to a single centre $C$](images/CamPersp.jpg)
+
 This is justified by the physical diaphragm which constrains light convergence. The only known
 practical exceptions are macro-photogrammetry and underwater photogrammetry.
 
@@ -88,15 +98,34 @@ A camera lens system has **cylindrical symmetry** around its optical axis $\math
 - All lenses are mechanically aligned on their common optical axis
 - The sensor plane is orthogonal to that axis
 
+<div style="display:flex; gap:1rem; align-items:flex-end; margin:1rem 0">
+  <figure style="margin:0; flex:2">
+    <img src="images/Lenses.jpg" style="width:100%">
+    <figcaption>Cross-section of a single lens</figcaption>
+  </figure>
+  <figure style="margin:0; flex:1">
+    <img src="images/LensesCyl.jpg" style="width:100%">
+    <figcaption>Modern camera lens assembly</figcaption>
+  </figure>
+</div>
+
 This global cylindrical symmetry has a direct consequence: the distortion $D$ also has
 **radial symmetry**. The proof follows from Snell-Descartes refraction laws applied to each
 diopter in sequence — the azimuthal angle $\theta$ of any ray is preserved through each
 refraction, so the image of a point at polar angle $(\rho, \theta)$ from $P^p$ can only
 be displaced radially, to $(\rho', \theta)$.
 
+![Notation for diopter crossing in the proof of radial symmetry](images/Radial-PhiOmegaZ.jpg)
+
+### Radial distortion in the plane
+
+In polar coordinates around the principal point, the distortion reduces to a scalar function
+$D_r : \rho \mapsto \rho'$. In Cartesian coordinates:
+
+![Notation for radial distortion in the image plane](images/RadialInThePlane.jpg)
+
 ### Polynomial model
 
-The radial distortion is fully characterised by a scalar function $D_r : \rho \mapsto \rho'$.
 Three properties of $D_r$ follow from the physics:
 
 1. **Smooth** — the lens surfaces are $\mathcal{C}^\infty$, so $D_r$ is too
@@ -130,15 +159,37 @@ $$
 Both conventions span the same function space — conversion is straightforward ($K_1 = k_1/F^2$, etc.).
 MMVII prefers dimensionless coefficients for numerical stability.
 
-**How many terms?**
+### How many terms?
+
 There is no universal rule. Tradition: aerial photogrammetry uses $n=3$; computer vision often $n=1$ or $2$.
 MMVII allows arbitrary $n$. With modern automatic tie-point extraction (tens of thousands of points),
 using $n=5$ or even $n=10$ carries little risk of over-parametrisation — and modern consumer-grade
 optics with complex multi-lens assemblies may genuinely require higher-degree models.
 
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin:1rem 0">
+  <figure style="margin:0">
+    <img src="images/Courbe-Pts.jpg" style="width:100%">
+    <figcaption>Observations to fit</figcaption>
+  </figure>
+  <figure style="margin:0">
+    <img src="images/CourbeGoodParam.jpg" style="width:100%">
+    <figcaption>Good parametrization</figcaption>
+  </figure>
+  <figure style="margin:0">
+    <img src="images/Courbe-UndeParam.jpg" style="width:100%">
+    <figcaption>Under-parametrization</figcaption>
+  </figure>
+  <figure style="margin:0">
+    <img src="images/CourbeOverParam.jpg" style="width:100%">
+    <figcaption>Over-parametrization</figcaption>
+  </figure>
+</div>
+
 **Extrapolation warning:** Whatever model is chosen, accuracy degrades sharply outside the
 region covered by measurements. If no tie points exist in the image corners, distortion
 estimates there are unreliable.
+
+![Extrapolation artefacts outside the measurement region](images/CourbeExrapol.jpg)
 
 ---
 
@@ -173,6 +224,8 @@ $$
 
 where $(x, y) = \vec{u}_1 = p - C_1$ and $R_1 = x^2 + y^2$.
 
+![Relation between the $\mathrm{Dec}_x$ and $T_y$ decentring functions](images/DecxTy.jpg)
+
 This result holds regardless of the number of misaligned lens groups — any combination reduces
 to a single $(\alpha, \beta)$ pair at first order.
 
@@ -203,6 +256,8 @@ if $\mathcal{S}^h$ is merely tangent to $\mathcal{S}^i$ at the identity).
 The safe condition is that the tangent spaces of $\mathcal{S}^h$ (the set of small rotations) and
 $\mathcal{S}^i$ (the calibration model) be **orthogonal** at the identity, under the $L^2$ scalar product
 on the sensor domain.
+
+![Possible geometric relations between $\mathcal{S}^h$ and $\mathcal{S}^i$](images/TangentSpace.jpg)
 
 This analysis guides MMVII's choice of which higher-order terms to include or exclude in its
 calibration models, to avoid introducing redundant parameters that mix with the pose.
