@@ -1,15 +1,8 @@
 # My First Command: Set Editing
 
-This chapter presents the first commands of MMVII. It follows a structure that will be
-systematic throughout the documentation:
-
-- an **algorithms/photogrammetry** section covering the concepts, largely independent of MMVII itself;
-- a **user's guide** section covering command syntax;
-- a **programmer's** section describing the C++ implementation (with links to Doxygen).
-
-This chapter is an exception in that the user's guide and programming parts are more
-developed than usual for a single command, as many concepts common to all commands are
-introduced here.
+This page introduces the `EditSet` command and the general conventions of the MMVII
+command-line interface. Concepts covered here — argument syntax, help system, global
+parameters, error codes — apply to every MMVII command.
 
 ---
 
