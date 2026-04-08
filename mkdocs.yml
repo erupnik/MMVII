@@ -56,6 +56,9 @@ extra_javascript:
 
 extra_css: []
 
+hooks:
+  - hooks/tex_drift_check.py
+
 nav:
   - Home: index.md
   - User Guide:
