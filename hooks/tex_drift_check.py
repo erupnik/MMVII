@@ -6,6 +6,7 @@ Uses git log timestamps so the check works identically locally and in CI
 (filesystem mtimes are unreliable after a fresh checkout).
 """
 
+import os
 import subprocess
 from pathlib import Path
 
@@ -55,9 +56,13 @@ def on_pre_build(config):
             drifted.append((tex_path, md_path))
 
     if drifted:
-        print("\n" + "=" * 70)
-        print("WARNING: the following .tex sources were updated after their")
-        print("paired docs pages — manual review may be needed:")
-        for tex, md in drifted:
-            print(f"  {tex}  →  {md}")
-        print("=" * 70 + "\n")
+        if os.getenv("GITHUB_ACTIONS"):
+            for tex, md in drifted:
+                print(f"::warning file={tex}::{tex} was updated after {md} — docs may have drifted")
+        else:
+            print("\n" + "=" * 70)
+            print("WARNING: the following .tex sources were updated after their")
+            print("paired docs pages — manual review may be needed:")
+            for tex, md in drifted:
+                print(f"  {tex}  →  {md}")
+            print("=" * 70 + "\n")
