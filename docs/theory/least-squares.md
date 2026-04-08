@@ -84,7 +84,7 @@ Default values:
 | $\text{Exp}$ | $1$ | Attenuated L1 behaviour |
 | $\text{Thrs}$ | $-1$ | No threshold — observations are never cancelled |
 
-![Weight function $w(r)$ for various parameter combinations](images/cStdWeighterResidual.png)
+![Weight function $w(r)$ for various parameter combinations](images/cStdWeighterResidual.png){ width="450" }
 
 ---
 

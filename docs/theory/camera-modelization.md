@@ -25,20 +25,20 @@ $$
 i = P^p_x + F \frac{x^c}{z^c} \;\;;\;\; j = P^p_y + F \frac{y^c}{z^c}
 $$
 
-![Notation for the camera coordinate relation](images/Camera3D.jpg)
+![Notation for the camera coordinate relation](images/Camera3D.jpg){ width="500" }
 
 !!! note "Sign convention"
     MMVII places the image plane *in front of* the hole (the mathematically equivalent but
     non-physical convention). This flips a sign compared to the physical camera obscura but
     is universally adopted in photogrammetry and computer vision.
 
-![Camera model: physically-based (left) vs. convention used in MMVII (right)](images/InvCamera.jpg)
+![Camera model: physically-based (left) vs. convention used in MMVII (right)](images/InvCamera.jpg){ width="500" }
 
 **MMVII convention for image axes:** $i$ runs left-to-right, $j$ top-to-bottom (native image
 format coordinates). This makes the camera frame *direct* ($\vec{k} = \vec{i} \wedge \vec{j}$),
 with $\vec{k}$ pointing in the **viewing direction** of the camera.
 
-![Camera frame and ground frame relationship](images/RepairCam.jpg)
+![Camera frame and ground frame relationship](images/RepairCam.jpg){ width="500" }
 
 ### Compact notation
 
@@ -68,7 +68,7 @@ software) adopts one key hypothesis that is maintained throughout:
 
 > **All light rays producing a given image point $q$ pass through a single virtual point $C$.**
 
-![All outgoing light bundles converge to a single centre $C$](images/CamPersp.jpg)
+![All outgoing light bundles converge to a single centre $C$](images/CamPersp.jpg){ width="350" }
 
 This is justified by the physical diaphragm which constrains light convergence. The only known
 practical exceptions are macro-photogrammetry and underwater photogrammetry.
@@ -98,9 +98,9 @@ A camera lens system has **cylindrical symmetry** around its optical axis $\math
 - All lenses are mechanically aligned on their common optical axis
 - The sensor plane is orthogonal to that axis
 
-![Cross-section of a single lens](images/Lenses.jpg)
+![Cross-section of a single lens](images/Lenses.jpg){ width="500" }
 
-![Modern camera lens assembly](images/LensesCyl.jpg)
+![Modern camera lens assembly](images/LensesCyl.jpg){ width="350" }
 
 This global cylindrical symmetry has a direct consequence: the distortion $D$ also has
 **radial symmetry**. The proof follows from Snell-Descartes refraction laws applied to each
@@ -108,14 +108,14 @@ diopter in sequence — the azimuthal angle $\theta$ of any ray is preserved thr
 refraction, so the image of a point at polar angle $(\rho, \theta)$ from $P^p$ can only
 be displaced radially, to $(\rho', \theta)$.
 
-![Notation for diopter crossing in the proof of radial symmetry](images/Radial-PhiOmegaZ.jpg)
+![Notation for diopter crossing in the proof of radial symmetry](images/Radial-PhiOmegaZ.jpg){ width="500" }
 
 ### Radial distortion in the plane
 
 In polar coordinates around the principal point, the distortion reduces to a scalar function
 $D_r : \rho \mapsto \rho'$. In Cartesian coordinates:
 
-![Notation for radial distortion in the image plane](images/RadialInThePlane.jpg)
+![Notation for radial distortion in the image plane](images/RadialInThePlane.jpg){ width="500" }
 
 ### Polynomial model
 
@@ -159,16 +159,16 @@ MMVII allows arbitrary $n$. With modern automatic tie-point extraction (tens of 
 using $n=5$ or even $n=10$ carries little risk of over-parametrisation — and modern consumer-grade
 optics with complex multi-lens assemblies may genuinely require higher-degree models.
 
-![Observations to fit](images/Courbe-Pts.jpg)
-![Good parametrization](images/CourbeGoodParam.jpg)
-![Under-parametrization](images/Courbe-UndeParam.jpg)
-![Over-parametrization](images/CourbeOverParam.jpg)
+![Observations to fit](images/Courbe-Pts.jpg){ width="280" }
+![Good parametrization](images/CourbeGoodParam.jpg){ width="280" }
+![Under-parametrization](images/Courbe-UndeParam.jpg){ width="280" }
+![Over-parametrization](images/CourbeOverParam.jpg){ width="280" }
 
 **Extrapolation warning:** Whatever model is chosen, accuracy degrades sharply outside the
 region covered by measurements. If no tie points exist in the image corners, distortion
 estimates there are unreliable.
 
-![Extrapolation artefacts outside the measurement region](images/CourbeExrapol.jpg)
+![Extrapolation artefacts outside the measurement region](images/CourbeExrapol.jpg){ width="280" }
 
 ---
 
@@ -203,7 +203,7 @@ $$
 
 where $(x, y) = \vec{u}_1 = p - C_1$ and $R_1 = x^2 + y^2$.
 
-![Relation between the $\mathrm{Dec}_x$ and $T_y$ decentring functions](images/DecxTy.jpg)
+![Relation between the $\mathrm{Dec}_x$ and $T_y$ decentring functions](images/DecxTy.jpg){ width="500" }
 
 This result holds regardless of the number of misaligned lens groups — any combination reduces
 to a single $(\alpha, \beta)$ pair at first order.
@@ -236,7 +236,7 @@ The safe condition is that the tangent spaces of $\mathcal{S}^h$ (the set of sma
 $\mathcal{S}^i$ (the calibration model) be **orthogonal** at the identity, under the $L^2$ scalar product
 on the sensor domain.
 
-![Possible geometric relations between $\mathcal{S}^h$ and $\mathcal{S}^i$](images/TangentSpace.jpg)
+![Possible geometric relations between $\mathcal{S}^h$ and $\mathcal{S}^i$](images/TangentSpace.jpg){ width="500" }
 
 This analysis guides MMVII's choice of which higher-order terms to include or exclude in its
 calibration models, to avoid introducing redundant parameters that mix with the pose.
