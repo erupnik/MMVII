@@ -16,7 +16,7 @@ The simplest possible camera is the **camera obscura**: a box with a pinhole. Li
 scene point $P^c = (x^c, y^c, z^c)$ (in the camera's local frame) travels in a straight line
 through the hole and hits the image plane at pixel $q = (i, j)$.
 
-![Camera obscura: schema and a real object](images/CameraObscura.jpg)
+![Camera obscura: schema and a real object](images/CameraObscura.jpg){ width="500" }
 
 Setting up coordinates with origin at the hole, axes $\vec{i}, \vec{j}$ in the image plane,
 and $\vec{k}$ orthogonal to it, and calling $P^p$ the **principal point** and $F$ the **focal length**:
@@ -98,16 +98,9 @@ A camera lens system has **cylindrical symmetry** around its optical axis $\math
 - All lenses are mechanically aligned on their common optical axis
 - The sensor plane is orthogonal to that axis
 
-<div style="display:flex; gap:1rem; align-items:flex-end; margin:1rem 0">
-  <figure style="margin:0; flex:2">
-    <img src="images/Lenses.jpg" style="width:100%">
-    <figcaption>Cross-section of a single lens</figcaption>
-  </figure>
-  <figure style="margin:0; flex:1">
-    <img src="images/LensesCyl.jpg" style="width:100%">
-    <figcaption>Modern camera lens assembly</figcaption>
-  </figure>
-</div>
+![Cross-section of a single lens](images/Lenses.jpg)
+
+![Modern camera lens assembly](images/LensesCyl.jpg)
 
 This global cylindrical symmetry has a direct consequence: the distortion $D$ also has
 **radial symmetry**. The proof follows from Snell-Descartes refraction laws applied to each
@@ -166,24 +159,10 @@ MMVII allows arbitrary $n$. With modern automatic tie-point extraction (tens of 
 using $n=5$ or even $n=10$ carries little risk of over-parametrisation — and modern consumer-grade
 optics with complex multi-lens assemblies may genuinely require higher-degree models.
 
-<div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin:1rem 0">
-  <figure style="margin:0">
-    <img src="images/Courbe-Pts.jpg" style="width:100%">
-    <figcaption>Observations to fit</figcaption>
-  </figure>
-  <figure style="margin:0">
-    <img src="images/CourbeGoodParam.jpg" style="width:100%">
-    <figcaption>Good parametrization</figcaption>
-  </figure>
-  <figure style="margin:0">
-    <img src="images/Courbe-UndeParam.jpg" style="width:100%">
-    <figcaption>Under-parametrization</figcaption>
-  </figure>
-  <figure style="margin:0">
-    <img src="images/CourbeOverParam.jpg" style="width:100%">
-    <figcaption>Over-parametrization</figcaption>
-  </figure>
-</div>
+![Observations to fit](images/Courbe-Pts.jpg)
+![Good parametrization](images/CourbeGoodParam.jpg)
+![Under-parametrization](images/Courbe-UndeParam.jpg)
+![Over-parametrization](images/CourbeOverParam.jpg)
 
 **Extrapolation warning:** Whatever model is chosen, accuracy degrades sharply outside the
 region covered by measurements. If no tie points exist in the image corners, distortion
