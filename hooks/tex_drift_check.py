@@ -24,6 +24,7 @@ TEX_MD_PAIRS = [
     ("Doc/Programmer/PythonAPI.tex",            "docs/developer/python-api.md"),
     ("Doc/Programmer/IntroProg.tex",            "docs/developer/programming-guide.md"),
     ("Doc/Methods/PerspCamModelization.tex",    "docs/theory/camera-modelization.md"),
+    ("Doc/Methods/LeastSquare.tex",             "docs/theory/least-squares.md"),
     ("Doc/Tutorial/TutoOrient.tex",             "docs/tutorials/orientation.md"),
     ("Doc/Tutorial/UseCase01.tex",              "docs/tutorials/use-cases/image-development.md"),
 ]

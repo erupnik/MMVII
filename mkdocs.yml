@@ -78,6 +78,7 @@ nav:
   - Theory:
     - Overview: theory/index.md
     - Camera Modelization: theory/camera-modelization.md
+    - Least Squares & Uncertainty: theory/least-squares.md
   - Developer Guide:
     - Overview: developer/index.md
     - Adding Commands: developer/programming-guide.md
