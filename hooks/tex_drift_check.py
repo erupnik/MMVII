@@ -11,7 +11,9 @@ from pathlib import Path
 
 # (tex source, hand-crafted docs page)
 TEX_MD_PAIRS = [
-    ("Doc/Programmer/Serialization.tex",       "docs/developer/serialization.md"),
+    ("Doc/Generalities/Intro.tex",              "docs/user-guide/getting-started.md"),
+    ("Doc/Generalities/ProjectManag.tex",       "docs/user-guide/project-management.md"),
+    ("Doc/Programmer/Serialization.tex",        "docs/developer/serialization.md"),
     ("Doc/Programmer/NonLinearOptim.tex",       "docs/developer/nonlinear-optim.md"),
     ("Doc/Programmer/SymbolicDerivation.tex",   "docs/developer/symbolic-derivation.md"),
     ("Doc/Programmer/ImagesClasses.tex",        "docs/developer/image-classes.md"),

@@ -63,6 +63,8 @@ nav:
   - Home: index.md
   - User Guide:
     - Installation: user-guide/installation.md
+    - Getting Started: user-guide/getting-started.md
+    - Project Management: user-guide/project-management.md
     - Dense Matching: user-guide/dense-matching.md
     - Command Reference: user-guide/commands.md
   - Tutorials:
