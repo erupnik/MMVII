@@ -84,6 +84,7 @@ nav:
     - Adding Commands: developer/programming-guide.md
     - Serialization: developer/serialization.md
     - Non-Linear Optimisation: developer/nonlinear-optim.md
+    - Heuristic Optimisation: developer/heuristic-optim.md
     - Symbolic Derivation: developer/symbolic-derivation.md
     - Image Classes: developer/image-classes.md
     - Mapping Framework: developer/mapping.md

@@ -2,8 +2,6 @@
 
 Step-by-step guides covering common MMVII workflows.
 
-## Learning path
-
 | Tutorial | Description | Level |
 |----------|-------------|-------|
 | [Orientation & Relative Poses](orientation.md) | Projection formulas, pose estimation, essential matrix, global reconstruction | Beginner → Intermediate |

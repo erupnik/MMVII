@@ -16,6 +16,7 @@ TEX_MD_PAIRS = [
     ("Doc/Generalities/ProjectManag.tex",       "docs/user-guide/project-management.md"),
     ("Doc/Programmer/Serialization.tex",        "docs/developer/serialization.md"),
     ("Doc/Programmer/NonLinearOptim.tex",       "docs/developer/nonlinear-optim.md"),
+    ("Doc/Programmer/HeuristikOptim.tex",       "docs/developer/heuristic-optim.md"),
     ("Doc/Programmer/SymbolicDerivation.tex",   "docs/developer/symbolic-derivation.md"),
     ("Doc/Programmer/ImagesClasses.tex",        "docs/developer/image-classes.md"),
     ("Doc/Programmer/Mapping.tex",              "docs/developer/mapping.md"),
