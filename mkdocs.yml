@@ -69,8 +69,6 @@ nav:
     - Command Reference: user-guide/commands.md
   - Tutorials:
     - Overview: tutorials/index.md
-    - Orientation & Relative Poses: tutorials/orientation.md
-    - Bundle Adjustment: tutorials/bundle-adjustment.md
     - Topometry & Clinometers: tutorials/topometry.md
     - Use Cases:
       - Image Development: tutorials/use-cases/image-development.md

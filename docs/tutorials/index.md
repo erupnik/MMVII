@@ -4,8 +4,6 @@ Step-by-step guides covering common MMVII workflows.
 
 | Tutorial | Description | Level |
 |----------|-------------|-------|
-| [Orientation & Relative Poses](orientation.md) | Projection formulas, pose estimation, essential matrix, global reconstruction | Beginner → Intermediate |
-| [Bundle Adjustment](bundle-adjustment.md) | Full photogrammetric block adjustment | Intermediate |
 | [Topometry & Clinometers](topometry.md) | Integrate clinometer measurements into bundle adjustment | Intermediate |
 
 ## Use cases
